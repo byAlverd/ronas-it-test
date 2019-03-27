@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Погода</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div class="container" id="weatherApp">
+      <div class="loc">
+          <h2 class="loc-timezone">{{sityName}}</h2>
+          <div class="degree-section">
+              <span>&deg;</span>
+              <button @click="selOrFar = !selOrFar" class="buttonDegree"><span class="buttonDegree-c">C</span>|<span class="buttonDegree-f">F</span></button>
+          </div>
+        <div class="location-redirect">
+          <div class="redirect-sity" @click="show = !show">Сменить город</div>
+          <div class="redirect-geo" @click.prevent="geolocation()"><i class="fas fa-location-arrow" ></i> Мое местоположение</div>
+        </div>
+            <input class="showInputSity" type="text" v-show="show" v-model="searchQuery" @keyup.enter="query" placeholder="укажите город">
+          </div>
+        <div class="temperature">
+           <img v-bind:src="'http://openweathermap.org/img/w/' + icon + '.png' ">
+            <h1 class="temperature-degree" v-if="selOrFar">{{currentTemp}} &deg;</h1>
+            <h1 class="temperature-degree"v-else>{{far}} &deg;</h1>
+        </div>
+        <p class="temperature-description">{{overcast}}</p>
+        <div class="exOptions-change">
+          <div class="exOptions">
+            <span>Ветер</span>
+            <p class="exOptions-wind">{{wind}}, {{degWind | windDeg}}</p>
+          </div>
+          <div class="exOptions">
+              <span>Давление</span>
+              <p class="exOptions-pressure">{{pressure | currency}} мм рт.ст.</p>
+          </div>
+          <div class="exOptions">
+              <span>Влажность</span>
+              <p class="exOptions-humidity"> {{humidity}} </p>
+          </div>
+          <div class="exOptions">
+              <span>Облачность</span>
+              <p class="exOptions-chanceRain">{{cloudsAll}}</p>
+          </div>
+        </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

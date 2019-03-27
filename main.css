@@ -1,0 +1,137 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.container{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(rgb(47,150,163), rgb(48,62,143));
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  user-select: none;
+}
+.loc{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 7vh;
+  width: 30%;
+}
+.loc-timezone{
+color: white;
+font-size: 30px;
+font-weight: 300;
+}
+.degree-section{
+padding: 0 7px 0 0;
+}
+.buttonDegree{
+  display: flex;
+  align-content: center;
+  height: 30px;
+  width: 70px;
+  display: inline-block;
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  outline: none;
+  user-select: none;
+  border: 1px solid rgb(206, 203, 203);
+  background: rgba(255,255,255,.2);
+  border-radius: 7px;
+  transition: 0.2s;
+}
+.buttonDegree-c:hover,
+.buttonDegree-f:hover{
+  cursor: pointer;
+  background: rgba(31, 31, 31, 0.356);
+  border-radius: 6px;
+  padding-top: 7px;
+  transition: .2s linear;
+}
+.buttonDegree-c{
+  padding: 3px 9px 7px 15px;
+  color: white;
+}
+.buttonDegree-f{
+  padding: 3px 15px 7px 10px;
+  color: white;
+}
+.location-redirect{
+display: flex;
+padding: 0 260px 0 0;
+}
+.redirect-sity,
+.redirect-geo,
+.fas{
+  font-size: 13px;
+  color: rgb(194, 194, 194);
+  cursor: pointer;
+}
+.redirect-sity{
+  margin: 0 35px 0 0;
+}
+.showInputSity{
+  margin: 10px 420px 0 0;
+  width: 130px;
+  border: 1px solid rgb(235, 235, 235);
+  border-radius: 5px;
+  outline: none;
+  padding: 0 0 0 5px;
+}
+.fas{
+  margin: 0 5px 0 0;
+}
+.temperature{
+  display: flex;
+  align-items: center;
+  margin-top: 90px;
+}
+.temperature-description{
+  margin-top: 35px;
+}
+.temperature-degree{
+  font-size: 60px;
+  font-weight: 300;
+}
+.exOptions-change{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 90px;
+}
+.exOptions{
+  padding: 5px 25px 5px 25px;
+}
+span{
+  font-size: 13px;
+  font-weight: 300;
+}
+p{
+  font-size: 15px;
+  font-weight: 300;
+}
+
+@media screen and (max-width: 600px) {
+.location-redirect{
+    display: flex;
+    padding: 0;
+}
+.loc{
+  width: 90%;
+}
+.redirect-sity{
+  margin: 0 20px 0 0;
+}
+.showInputSity{
+  margin: 7px 145px 0 0;
+  width: 130px;
+}
+}
